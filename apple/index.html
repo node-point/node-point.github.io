@@ -538,6 +538,80 @@
       z-index: 3000;
       border: 1px solid var(--primary);
     }
+  
+    /* Top & Floating Navigation */
+    .nav-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(246,173,85,0.14);
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 900;
+      padding: 12px 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      transition: all 0.2s ease;
+    }
+    .nav-back-btn:active {
+      background: var(--primary);
+      color: #1a202c;
+    }
+
+    .btn-return-main-bottom {
+      display: block;
+      width: 100%;
+      background: #1e2533;
+      border: 2px solid var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 21px;
+      font-weight: 900;
+      padding: 20px;
+      border-radius: 16px;
+      margin: 40px 0 20px 0;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    .btn-return-main-bottom:active {
+      background: var(--primary);
+      color: #1a202c;
+    }
+
+    #floating-quick-nav {
+      position: fixed;
+      bottom: 82px;
+      right: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1800;
+    }
+    .quick-pill {
+      background: rgba(19, 23, 32, 0.92);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      border: 1.5px solid var(--primary);
+      padding: 11px 16px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      transition: all 0.15s ease;
+    }
+    .quick-pill:active {
+      transform: scale(0.95);
+      background: var(--primary);
+      color: #1a202c;
+    }
+
   </style>
 </head>
 <body>
@@ -550,7 +624,7 @@
   <div class="container">
 
     <!-- Brand Header -->
-    <a href="https://node-point.github.io" class="nav-back" style="display: inline-flex; align-items: center; gap: 6px; color: var(--primary); text-decoration: none; font-size: 15px; font-weight: 800; margin-bottom: 14px;">‹ 노드포인트 메인몰 홈으로 가기</a>
+    <a href="https://node-point.github.io" class="nav-back-btn">‹ 🏠 노드포인트 공식 메인몰로 가기</a>
     <header class="brand-header">
       <div class="brand-title">
         🍎 <span>노드포인트</span>
