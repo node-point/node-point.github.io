@@ -779,6 +779,12 @@
     </section>
 
     <!-- Footer Business Info -->
+    
+    <!-- Bottom Wide Return Button -->
+    <a href="https://node-point.github.io" class="btn-return-main-bottom">
+      🏠 노드포인트 공식 메인몰 전체보기 ➔
+    </a>
+
     <footer class="site-footer">
       <p><strong>상호:</strong> 노드포인트 | <strong>대표자:</strong> 이병갑</p>
       <p><strong>사업장 주소:</strong> 경기도 남양주시</p>
@@ -927,5 +933,16 @@
       closeOrderSheet();
     }
   </script>
+
+  <!-- Floating Quick Nav (메인으로 & 위로) -->
+  <div id="floating-quick-nav">
+    <a href="https://node-point.github.io" class="quick-pill" title="메인몰 홈으로 가기">
+      🏠 메인
+    </a>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="quick-pill" title="맨 위로 가기">
+      ⬆ 위로
+    </button>
+  </div>
+
 </body>
 </html>
