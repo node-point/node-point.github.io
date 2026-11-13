@@ -271,40 +271,43 @@
 
     .price-row {
       display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 22px;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
       padding-bottom: 16px;
       border-bottom: 1px solid var(--divider);
     }
-    .price-main {
+    .price-main-line {
       display: flex;
+      justify-content: space-between;
       align-items: baseline;
-      gap: 8px;
     }
     .price-label {
       font-size: 14px;
       font-weight: 700;
       color: var(--text-muted);
+      letter-spacing: -0.2px;
     }
     .price-val {
-      font-size: 30px;
+      font-size: 28px;
       font-weight: 900;
       color: var(--accent);
-      letter-spacing: -1px;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
     }
-    .price-sub-wrap {
-      text-align: right;
+    .price-sub-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .price-orig {
       font-size: 14px;
       color: var(--text-sub);
       text-decoration: line-through;
-      margin-bottom: 2px;
     }
     .price-ship {
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--accent);
     }
 
@@ -316,11 +319,13 @@
       color: var(--btn-text);
       text-decoration: none;
       text-align: center;
-      padding: 20px 22px;
-      border-radius: 16px;
-      font-size: 21px;
-      font-weight: 800;
+      padding: 17px 18px;
+      border-radius: 14px;
+      font-size: 18px;
+      font-weight: 900;
       letter-spacing: -0.3px;
+      word-break: keep-all;
+      white-space: nowrap;
       box-shadow: 0 4px 16px rgba(0,0,0,0.15);
       transition: transform 0.15s ease, opacity 0.2s;
     }
@@ -337,10 +342,13 @@
       border: 1px solid var(--btn-secondary-border);
       text-decoration: none;
       text-align: center;
-      padding: 19px 22px;
-      border-radius: 16px;
-      font-size: 20px;
-      font-weight: 700;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      word-break: keep-all;
+      white-space: nowrap;
     }
 
     /* Air Hairline Divider */
@@ -431,20 +439,20 @@
     #floating-top-btn {
       position: fixed;
       bottom: 24px;
-      right: 20px;
+      right: 18px;
       background: var(--btn-bg);
       color: var(--btn-text);
       border: 1.5px solid var(--accent);
-      padding: 13px 20px;
+      padding: 11px 16px;
       border-radius: 30px;
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 900;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
       z-index: 1800;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       transition: all 0.2s ease;
     }
     #floating-top-btn:active {
@@ -525,19 +533,17 @@
         </p>
 
         <div class="price-row">
-          <div class="price-main">
+          <div class="price-main-line">
             <span class="price-label">쿠폰 실구매가</span>
             <span class="price-val">11,900원~</span>
           </div>
-          <div class="price-sub-wrap">
-            <div class="price-orig">정상가 21,900원</div>
-            <div class="price-ship">🚚 산지 무료배송</div>
+          <div class="price-sub-line">
+            <span class="price-orig">정상가 21,900원</span>
+            <span class="price-ship">🚚 산지 무료배송</span>
           </div>
         </div>
 
-        <a href="https://node-point.github.io/apple" class="btn-action">
-          🍎 부사사과 상세 구경 & 직거래 주문서 보기 ➔
-        </a>
+        <a href="apple" class="btn-action">🍎 안동 부사사과 구경 & 주문하기 ➔</a>
       </article>
 
       <!-- Product 2: Gwamegi -->
@@ -563,19 +569,17 @@
         </p>
 
         <div class="price-row">
-          <div class="price-main">
+          <div class="price-main-line">
             <span class="price-label">쿠폰 실구매가</span>
             <span class="price-val">15,900원~</span>
           </div>
-          <div class="price-sub-wrap">
-            <div class="price-orig">정상가 25,900원</div>
-            <div class="price-ship">🚚 산지 직송 포장</div>
+          <div class="price-sub-line">
+            <span class="price-orig">정상가 25,900원</span>
+            <span class="price-ship">🚚 산지 직송 포장</span>
           </div>
         </div>
 
-        <a href="https://node-point.github.io/gwamegi" class="btn-action">
-          🐟 구룡포 과메기 상세 구경 & 직거래 주문서 보기 ➔
-        </a>
+        <a href="gwamegi" class="btn-action">🐟 구룡포 과메기 구경 & 주문하기 ➔</a>
       </article>
 
       <!-- Product 3: Gold Mango (Coming Soon) -->
@@ -601,12 +605,13 @@
         </p>
 
         <div class="price-row">
-          <div class="price-main">
+          <div class="price-main-line">
             <span class="price-label">진행 상태</span>
-            <span class="price-val" style="font-size: 22px; color: var(--text-muted);">입고 검수 중</span>
+            <span class="price-val" style="font-size: 20px; color: var(--text-muted);">입고 검수 중</span>
           </div>
-          <div class="price-sub-wrap">
-            <div style="font-size: 14px; font-weight: 700; color: var(--accent);">곧 출시 예정</div>
+          <div class="price-sub-line">
+            <span style="font-size: 13px; color: var(--text-sub);">철저한 현지 당도 선별</span>
+            <span style="font-size: 13px; font-weight: 800; color: var(--accent);">✨ 곧 출시 예정</span>
           </div>
         </div>
 

@@ -243,49 +243,67 @@
       color: var(--text);
     }
 
-    /* Option Cards - Extra Large & Touch-friendly */
+    /* Option Cards - Professional 2-Row Mobile Layout (Never Clipped) */
     .opt-card {
       background: var(--card-bg);
-      border: 2px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 14px;
-      padding: 18px 16px;
-      margin-bottom: 14px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
       cursor: pointer;
       transition: all 0.2s ease;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      gap: 8px;
     }
     .opt-card.active {
       border-color: var(--primary);
       background: #252e3f;
       box-shadow: 0 4px 16px rgba(246,173,85,0.2);
     }
-    .opt-card-left {
-      flex: 1;
+    .opt-card-row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
     }
     .opt-title-text {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
       color: #ffffff;
-      margin-bottom: 4px;
+      word-break: keep-all;
+      letter-spacing: -0.3px;
+      line-height: 1.35;
+    }
+    .opt-card-row-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+      padding-top: 8px;
     }
     .opt-desc-text {
-      font-size: 15px;
+      font-size: 13.5px;
       color: var(--text-muted);
+      letter-spacing: -0.2px;
     }
-    .opt-card-right {
-      text-align: right;
+    .opt-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-shrink: 0;
     }
     .opt-orig-price-text {
-      font-size: 14px;
+      font-size: 13px;
       color: #a0aec0;
       text-decoration: line-through;
     }
     .opt-final-price-text {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 900;
       color: var(--primary);
+      white-space: nowrap;
+      letter-spacing: -0.5px;
     }
 
     /* Safe Box */
@@ -564,16 +582,17 @@
       display: block;
       width: 100%;
       background: #1e2533;
-      border: 2px solid var(--primary);
+      border: 1.5px solid var(--primary);
       color: #ffffff;
       text-decoration: none;
       text-align: center;
-      font-size: 21px;
-      font-weight: 900;
-      padding: 20px;
-      border-radius: 16px;
-      margin: 40px 0 20px 0;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      font-size: 17px;
+      font-weight: 800;
+      padding: 16px;
+      border-radius: 14px;
+      margin: 36px 0 20px 0;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
     }
     .btn-return-main-bottom:active {
       background: var(--primary);
@@ -582,28 +601,28 @@
 
     #floating-quick-nav {
       position: fixed;
-      bottom: 82px;
-      right: 16px;
+      bottom: 96px;
+      right: 14px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       z-index: 1800;
     }
     .quick-pill {
-      background: rgba(19, 23, 32, 0.92);
+      background: rgba(19, 23, 32, 0.94);
       backdrop-filter: blur(8px);
       color: #ffffff;
       border: 1.5px solid var(--primary);
-      padding: 11px 16px;
+      padding: 9px 13px;
       border-radius: 30px;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 900;
       cursor: pointer;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      gap: 5px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
       transition: all 0.15s ease;
     }
     .quick-pill:active {
@@ -708,61 +727,71 @@
 
       <!-- Opt 1 -->
       <div class="opt-card active" onclick="pickOption(this, '01번 2kg 소과 (14-16과)', '11,900원', '23,900원', '96304173317')">
-        <div class="opt-card-left">
+        <div class="opt-card-row-top">
           <div class="opt-title-text">01번 2kg 소과 (14-16과)</div>
-          <div class="opt-desc-text">부담 없는 실속형 / 1인 가구 추천</div>
         </div>
-        <div class="opt-card-right">
-          <div class="opt-orig-price-text">23,900원</div>
-          <div class="opt-final-price-text">11,900원</div>
+        <div class="opt-card-row-bottom">
+          <div class="opt-desc-text">부담 없는 실속형 / 1인 가구 추천</div>
+          <div class="opt-price-wrap">
+            <span class="opt-orig-price-text">23,900원</span>
+            <span class="opt-final-price-text">11,900원</span>
+          </div>
         </div>
       </div>
 
       <!-- Opt 2 -->
       <div class="opt-card" onclick="pickOption(this, '02번 3kg 소과 (15-18과)', '13,900원', '26,900원', '96304173323')">
-        <div class="opt-card-left">
+        <div class="opt-card-row-top">
           <div class="opt-title-text">02번 3kg 소과 (15-18과)</div>
-          <div class="opt-desc-text">가족 간식용 실속 가성비 구성</div>
         </div>
-        <div class="opt-card-right">
-          <div class="opt-orig-price-text">26,900원</div>
-          <div class="opt-final-price-text">13,900원</div>
+        <div class="opt-card-row-bottom">
+          <div class="opt-desc-text">가족 간식용 실속 가성비 구성</div>
+          <div class="opt-price-wrap">
+            <span class="opt-orig-price-text">26,900원</span>
+            <span class="opt-final-price-text">13,900원</span>
+          </div>
         </div>
       </div>
 
       <!-- Opt 3 -->
       <div class="opt-card" onclick="pickOption(this, '03번 3kg 중과 (10-14과)', '14,900원', '33,900원', '96304173322')">
-        <div class="opt-card-left">
+        <div class="opt-card-row-top">
           <div class="opt-title-text">03번 3kg 중과 (10-14과)</div>
-          <div class="opt-desc-text">큼직한 크기 / 베스트 인기 옵션</div>
         </div>
-        <div class="opt-card-right">
-          <div class="opt-orig-price-text">33,900원</div>
-          <div class="opt-final-price-text">14,900원</div>
+        <div class="opt-card-row-bottom">
+          <div class="opt-desc-text">큼직한 크기 / 베스트 인기 옵션</div>
+          <div class="opt-price-wrap">
+            <span class="opt-orig-price-text">33,900원</span>
+            <span class="opt-final-price-text">14,900원</span>
+          </div>
         </div>
       </div>
 
       <!-- Opt 4 -->
       <div class="opt-card" onclick="pickOption(this, '04번 5kg 소과 (23-28과)', '18,900원', '38,900원', '96304173324')">
-        <div class="opt-card-left">
+        <div class="opt-card-row-top">
           <div class="opt-title-text">04번 5kg 소과 (23-28과)</div>
-          <div class="opt-desc-text">풍성한 대용량 알뜰 구성</div>
         </div>
-        <div class="opt-card-right">
-          <div class="opt-orig-price-text">38,900원</div>
-          <div class="opt-final-price-text">18,900원</div>
+        <div class="opt-card-row-bottom">
+          <div class="opt-desc-text">풍성한 대용량 알뜰 구성</div>
+          <div class="opt-price-wrap">
+            <span class="opt-orig-price-text">38,900원</span>
+            <span class="opt-final-price-text">18,900원</span>
+          </div>
         </div>
       </div>
 
       <!-- Opt 5 -->
       <div class="opt-card" onclick="pickOption(this, '05번 5kg 중과 (17-22과)', '21,900원', '42,900원', '96304173320')">
-        <div class="opt-card-left">
+        <div class="opt-card-row-top">
           <div class="opt-title-text">05번 5kg 중과 (17-22과)</div>
-          <div class="opt-desc-text">넉넉한 대용량 + 큼직한 프리미엄 크기</div>
         </div>
-        <div class="opt-card-right">
-          <div class="opt-orig-price-text">42,900원</div>
-          <div class="opt-final-price-text">21,900원</div>
+        <div class="opt-card-row-bottom">
+          <div class="opt-desc-text">넉넉한 대용량 + 큼직한 프리미엄 크기</div>
+          <div class="opt-price-wrap">
+            <span class="opt-orig-price-text">42,900원</span>
+            <span class="opt-final-price-text">21,900원</span>
+          </div>
         </div>
       </div>
     </section>
@@ -782,7 +811,7 @@
     
     <!-- Bottom Wide Return Button -->
     <a href="https://node-point.github.io" class="btn-return-main-bottom">
-      🏠 노드포인트 공식 메인몰 전체보기 ➔
+      🏠 노드포인트 메인몰 전체보기 ➔
     </a>
 
     <footer class="site-footer">
@@ -843,16 +872,19 @@
 
   <!-- Fixed Bottom Action Dock (2 Order Buttons!) -->
   <aside id="bottom-dock">
-    <div class="dock-price-col">
-      <span class="dock-label" id="dock-label-text">01번 2kg 소과</span>
-      <span class="dock-price-val" id="dock-price-text">11,900원</span>
+    <div class="dock-top-status">
+      <span class="dock-label" id="dock-label-text">선택: 01번 2kg 소과</span>
+      <div class="dock-price-wrap">
+        <span class="dock-price-val" id="dock-price-text">11,900원</span>
+        <span class="dock-ship-free">(무료배송)</span>
+      </div>
     </div>
-    <div class="dock-btn-group">
+    <div class="dock-btn-row">
       <button class="btn-direct-order" onclick="openOrderSheet()">
-        ⚡ 바로주문
+        ⚡ 바로구매 (계좌직거래)
       </button>
       <a href="https://www.coupang.com/vp/products/9814313901?vendorItemId=96304173317" id="coupang-link" target="_blank" class="btn-coupang-order">
-        쿠팡결제 ➔
+        쿠팡으로 결제 ➔
       </a>
     </div>
   </aside>
@@ -872,7 +904,7 @@
       currentSelectedOpt = name;
       currentSelectedPrice = price;
 
-      document.getElementById('dock-label-text').innerText = name.split(' (')[0];
+      document.getElementById('dock-label-text').innerText = '선택: ' + name.split(' (')[0];
       document.getElementById('dock-price-text').innerText = price;
 
       document.getElementById('modal-opt-name').innerText = name;
