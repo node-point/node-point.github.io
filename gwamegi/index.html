@@ -250,26 +250,136 @@
     .photo-item img { width: 100%; height: 160px; object-fit: cover; display: block; }
     .photo-label { padding: 10px 8px; font-size: 15px; font-weight: 800; text-align: center; color: var(--text); }
 
+    /* Option Cards - 2-Row Safe Layout */
     .opt-card {
       background: var(--card-bg);
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1.5px solid var(--border);
       border-radius: 14px;
-      padding: 24px 20px;
-      margin-bottom: 14px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
       cursor: pointer;
+      transition: all 0.2s ease;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      gap: 8px;
     }
     .opt-card.active {
       border-color: var(--primary);
       background: #252e3f;
+      box-shadow: 0 4px 16px rgba(246,173,85,0.2);
     }
-    .opt-title-text { font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 4px; }
-    .opt-desc-text { font-size: 15px; color: var(--text-muted); }
-    .opt-card-right { text-align: right; }
-    .opt-orig-price-text { font-size: 14px; color: #a0aec0; text-decoration: line-through; }
-    .opt-final-price-text { font-size: 22px; font-weight: 900; color: var(--primary); }
+    .opt-card-row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .opt-title-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      word-break: keep-all;
+      letter-spacing: -0.3px;
+      line-height: 1.35;
+    }
+    .opt-card-row-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+      padding-top: 8px;
+    }
+    .opt-desc-text {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      letter-spacing: -0.2px;
+      word-break: keep-all;
+      padding-right: 10px;
+    }
+    .opt-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .opt-orig-price-text {
+      font-size: 13px;
+      color: #a0aec0;
+      text-decoration: line-through;
+    }
+    .opt-final-price-text {
+      font-size: 21px;
+      font-weight: 900;
+      color: var(--primary);
+      white-space: nowrap;
+      letter-spacing: -0.5px;
+    }
+    .modal-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-summary-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #8b949e;
+      white-space: nowrap;
+    }
+    .modal-summary-val {
+      font-size: 15px;
+      font-weight: 800;
+      color: #f0f6fc;
+      text-align: right;
+      word-break: keep-all;
+    }
+    .modal-summary-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 8px 0;
+    }
+    .modal-summary-price {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .order-item-summary {
+      background: #252e3f;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+
+    /* Breadcrumb Bar */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      color: #8b949e;
+      margin: 10px 0 16px 0;
+      padding: 0 4px;
+    }
+    .breadcrumb-bar a {
+      color: #a0aec0;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .breadcrumb-bar a:hover {
+      color: var(--primary);
+    }
+    .breadcrumb-sep {
+      color: #4b5563;
+      font-size: 12px;
+    }
+    .breadcrumb-item.active {
+      color: #e2e8f0;
+      font-weight: 700;
+    }
+
 
     .safe-box {
       background: var(--card-bg);
@@ -536,7 +646,7 @@
   </div>
 
   <div class="container">
-    <a href="https://node-point.github.io" class="nav-back-btn">‹ 🏠 노드포인트 공식 메인몰로 가기</a>
+    <a href="https://node-point.github.io/" class="nav-back-btn">‹ 🏠 노드포인트 공식 메인몰로 가기</a>
 
     <header class="brand-header">
       <div class="brand-title">🐟 <span>노드포인트</span></div>
@@ -547,7 +657,7 @@
       <span class="hero-eyebrow">⚡ 포항 구룡포 해풍 건조 당일 직배송</span>
       <h1 class="hero-headline">
         해풍에 쫀득하게 말린<br>
-        <em>구룡포 손질 과메기 세트</em>
+        <em>포항 구룡포 손질 꽁치 과메기</em>
       </h1>
       <p class="hero-sub">
         비린내 없이 고소한 기름기 가득! 신선 야채·해초·초장 풀세트 옵션
@@ -572,9 +682,7 @@
           <span class="final-price-unit">부터</span>
         </div>
       </div>
-      <div class="price-notice">
-        🚚 산지 전용 <strong>안심 신선 포장</strong> 직배송
-      </div>
+      <div class="price-notice">🚚 전 옵션 <strong>무료배송</strong> (산지 CJ대한통운 직송)</div>
     </section>
 
     <section>
@@ -674,7 +782,7 @@
 
     
     <!-- Bottom Wide Return Button -->
-    <a href="https://node-point.github.io" class="btn-return-main-bottom">
+    <a href="https://node-point.github.io/" class="btn-return-main-bottom">
       🏠 노드포인트 메인몰 전체보기 ➔
     </a>
 
@@ -696,9 +804,15 @@
     </div>
 
     <div class="order-item-summary">
-      <div style="font-size: 14px; color: #a0aec0;">선택 상품:</div>
-      <div id="modal-opt-name" style="font-size: 19px; color: var(--primary);">01번 5미 10쪽 단품</div>
-      <div style="margin-top: 6px; font-size: 16px;">결제 금액: <strong id="modal-opt-price" style="color: var(--primary); font-size: 24px;">15,900원</strong></div>
+      <div class="modal-summary-row">
+        <span class="modal-summary-label">선택 옵션</span>
+        <span class="modal-summary-val" id="modal-opt-name">01번 5미 10쪽 단품 (초장 동봉)</span>
+      </div>
+      <div class="modal-summary-divider"></div>
+      <div class="modal-summary-row">
+        <span class="modal-summary-label">결제 금액</span>
+        <span class="modal-summary-price" id="modal-opt-price">15,900원</span>
+      </div>
     </div>
 
     <div class="form-group">
@@ -749,10 +863,10 @@
   <div id="copy-toast">계좌번호가 복사되었습니다!</div>
 
   <script>
-    let currentSelectedOpt = "01번 5미 10쪽 단품";
+    let currentSelectedOpt = "01번 5미 10쪽 단품 (초장 동봉)";
     let currentSelectedPrice = "15,900원";
 
-    function pickOption(card, name, price, orig) {
+    function pickOption(card, name, price, orig, vendorItemId) {
       document.querySelectorAll('.opt-card').forEach(c => c.classList.remove('active'));
       card.classList.add('active');
 
@@ -764,6 +878,8 @@
 
       document.getElementById('modal-opt-name').innerText = name;
       document.getElementById('modal-opt-price').innerText = price;
+
+      document.getElementById('coupang-link').href = 'https://www.coupang.com/vp/products/9812083452?vendorItemId=' + vendorItemId;
     }
 
     function openOrderSheet() {
@@ -825,7 +941,7 @@
 
   <!-- Floating Quick Nav (메인으로 & 위로) -->
   <div id="floating-quick-nav">
-    <a href="https://node-point.github.io" class="quick-pill" title="메인몰 홈으로 가기">
+    <a href="https://node-point.github.io/" class="quick-pill" title="메인몰 홈으로 가기">
       🏠 메인
     </a>
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="quick-pill" title="맨 위로 가기">
