@@ -351,69 +351,111 @@
       color: var(--text);
     }
 
-    /* Fixed Bottom Action Dock (Extra Large Buttons) */
+    /* Fixed Bottom Action Dock (2-Tier Vertical Mobile Layout) */
     #bottom-dock {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: #0d1117;
+      background: rgba(13, 17, 23, 0.98);
       border-top: 1.5px solid var(--border);
-      padding: 12px 14px;
+      backdrop-filter: blur(16px);
+      padding: 10px 14px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 1500;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.6);
+      box-sizing: border-box;
+    }
+    .dock-top-status {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1500;
-      box-shadow: 0 -4px 16px rgba(0,0,0,0.5);
-    }
-    .dock-price-col {
-      display: flex;
-      flex-direction: column;
-      min-width: 120px;
+      width: 100%;
+      padding: 0 4px;
+      box-sizing: border-box;
     }
     .dock-label {
       font-size: 13px;
       color: var(--text-muted);
       font-weight: 700;
+      letter-spacing: -0.2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 60%;
+    }
+    .dock-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      white-space: nowrap;
     }
     .dock-price-val {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 900;
       color: var(--primary);
+      letter-spacing: -0.3px;
     }
-    .dock-btn-group {
+    .dock-ship-free {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8b949e;
+    }
+    .dock-btn-row {
       display: flex;
       gap: 8px;
-      flex: 1;
-      justify-content: flex-end;
+      width: 100%;
+      box-sizing: border-box;
     }
     .btn-direct-order {
-      background: var(--primary);
+      flex: 1.35;
+      background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
       color: #1a202c;
       border: none;
-      padding: 14px 14px;
+      height: 48px;
+      padding: 0 10px;
       border-radius: 12px;
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 900;
+      letter-spacing: -0.3px;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
+      white-space: nowrap;
+      word-break: keep-all;
       box-shadow: 0 4px 12px rgba(246,173,85,0.3);
+      transition: transform 0.1s ease;
     }
-    .btn-coupang-order {
+    .btn-direct-order:active {
+      transform: scale(0.98);
+      opacity: 0.9;
+    }
+    .btn-coupang {
+      flex: 1;
       background: #2b6cb0;
       color: #ffffff;
       text-decoration: none;
       border: none;
-      padding: 14px 14px;
+      height: 48px;
+      padding: 0 10px;
       border-radius: 12px;
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 900;
-      text-align: center;
+      letter-spacing: -0.3px;
       display: flex;
       align-items: center;
-      gap: 4px;
+      justify-content: center;
+      white-space: nowrap;
+      word-break: keep-all;
+      box-shadow: 0 4px 12px rgba(43,108,176,0.3);
+      transition: transform 0.1s ease;
+    }
+    .btn-coupang:active {
+      transform: scale(0.98);
+      opacity: 0.9;
     }
 
     /* Modal Sheet for Direct Order - Extra Large & Clean */
@@ -601,11 +643,11 @@
 
     #floating-quick-nav {
       position: fixed;
-      bottom: 96px;
+      bottom: 114px;
       right: 14px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
       z-index: 1800;
     }
     .quick-pill {
