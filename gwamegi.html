@@ -119,38 +119,88 @@
     }
     .img-card img { width: 100%; height: auto; display: block; }
 
+        /* Price Section - Mobile-Perfect Layout */
     .price-box {
       background: var(--card-bg);
-      border: 2px solid var(--primary);
+      border: 1.5px solid var(--primary);
       border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 48px;
+      padding: 16px 18px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(246,173,85,0.12);
+      box-sizing: border-box;
     }
     .coupon-badge {
       display: inline-block;
-      background: var(--primary);
+      background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
       color: #1a202c;
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 900;
-      padding: 5px 12px;
+      padding: 4px 10px;
       border-radius: 6px;
       margin-bottom: 10px;
+      letter-spacing: -0.2px;
     }
-    .main-price-row {
+    .price-box-orig-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .orig-price-label {
+      font-size: 13px;
+      color: #8b949e;
+      font-weight: 600;
+    }
+    .orig-price-val {
+      font-size: 15px;
+      color: #8b949e;
+      text-decoration: line-through;
+      font-weight: 600;
+    }
+    .price-box-final-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .final-price-label {
+      font-size: 15px;
+      font-weight: 800;
+      color: #cbd5e0;
+      letter-spacing: -0.3px;
+    }
+    .final-price-wrap {
       display: flex;
       align-items: baseline;
-      gap: 10px;
-      margin-bottom: 8px;
-      font-size: 20px;
-      font-weight: 800;
+      gap: 4px;
+      white-space: nowrap;
     }
-    .main-price-row strong {
-      font-size: 40px;
+    .final-price-val {
+      font-size: 28px;
       font-weight: 900;
       color: var(--primary);
-      letter-spacing: -1.5px;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
     }
-    .orig-price { font-size: 17px; color: #a0aec0; text-decoration: line-through; }
+    .final-price-unit {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .price-notice {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #8b949e;
+      margin-top: 2px;
+    }
+    .price-notice strong {
+      color: #38a169;
+    }
 
     .sec-title {
       font-size: 26px;
@@ -361,6 +411,36 @@
     .sheet-top h3 { font-size: 22px; font-weight: 900; color: var(--primary); }
     .sheet-close-btn { background: none; border: none; font-size: 28px; cursor: pointer; color: #a0aec0; }
     
+        .modal-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-summary-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #8b949e;
+      white-space: nowrap;
+    }
+    .modal-summary-val {
+      font-size: 15px;
+      font-weight: 800;
+      color: #f0f6fc;
+      text-align: right;
+      word-break: keep-all;
+    }
+    .modal-summary-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 8px 0;
+    }
+    .modal-summary-price {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--primary);
+      white-space: nowrap;
+    }
     .order-item-summary { background: #252e3f; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; }
     .form-group { margin-bottom: 14px; }
     .form-group label { display: block; font-size: 16px; font-weight: 800; color: #e2e8f0; margin-bottom: 6px; }

@@ -127,49 +127,87 @@
       display: block;
     }
 
-    /* Price Section - Extra Large */
+        /* Price Section - Mobile-Perfect Layout */
     .price-box {
       background: var(--card-bg);
-      border: 2px solid var(--primary);
+      border: 1.5px solid var(--primary);
       border-radius: 16px;
-      padding: 20px;
+      padding: 16px 18px;
       margin-bottom: 24px;
-      box-shadow: 0 6px 20px rgba(246,173,85,0.15);
+      box-shadow: 0 4px 16px rgba(246,173,85,0.12);
+      box-sizing: border-box;
     }
     .coupon-badge {
       display: inline-block;
-      background: var(--primary);
+      background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
       color: #1a202c;
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 900;
-      padding: 5px 12px;
+      padding: 4px 10px;
       border-radius: 6px;
       margin-bottom: 10px;
+      letter-spacing: -0.2px;
     }
-    .main-price-row {
+    .price-box-orig-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .orig-price-label {
+      font-size: 13px;
+      color: #8b949e;
+      font-weight: 600;
+    }
+    .orig-price-val {
+      font-size: 15px;
+      color: #8b949e;
+      text-decoration: line-through;
+      font-weight: 600;
+    }
+    .price-box-final-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .final-price-label {
+      font-size: 15px;
+      font-weight: 800;
+      color: #cbd5e0;
+      letter-spacing: -0.3px;
+    }
+    .final-price-wrap {
       display: flex;
       align-items: baseline;
-      gap: 10px;
-      margin-bottom: 8px;
-      font-size: 20px;
-      font-weight: 800;
+      gap: 4px;
+      white-space: nowrap;
     }
-    .main-price-row strong {
-      font-size: 40px;
+    .final-price-val {
+      font-size: 28px;
       font-weight: 900;
       color: var(--primary);
-      letter-spacing: -1.5px;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
     }
-    .orig-price {
-      font-size: 17px;
-      color: #a0aec0;
-      text-decoration: line-through;
-    }
-    .price-notice {
+    .final-price-unit {
       font-size: 16px;
       font-weight: 700;
-      color: var(--text-muted);
-      margin-top: 6px;
+      color: var(--primary);
+    }
+    .price-notice {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #8b949e;
+      margin-top: 2px;
+    }
+    .price-notice strong {
+      color: #38a169;
     }
 
     /* Section Title - Extra Large */
@@ -499,6 +537,36 @@
     .sheet-top h3 { font-size: 22px; font-weight: 900; color: var(--primary); }
     .sheet-close-btn { background: none; border: none; font-size: 28px; cursor: pointer; color: #a0aec0; }
     
+        .modal-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-summary-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #8b949e;
+      white-space: nowrap;
+    }
+    .modal-summary-val {
+      font-size: 15px;
+      font-weight: 800;
+      color: #f0f6fc;
+      text-align: right;
+      word-break: keep-all;
+    }
+    .modal-summary-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 8px 0;
+    }
+    .modal-summary-price {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--primary);
+      white-space: nowrap;
+    }
     .order-item-summary {
       background: #252e3f;
       border: 1px solid var(--border);
@@ -718,10 +786,17 @@
 
     <!-- Price Section -->
     <section class="price-box">
-      <div class="coupon-badge">선착순 10,000원 할인 쿠폰 적용가</div>
-      <div class="main-price-row">
-        <strong>11,900원</strong>부터
-        <span class="orig-price">23,900원</span>
+      <div class="coupon-badge">선착순 10,000원 쿠폰팩 즉시할인 적용</div>
+      <div class="price-box-orig-line">
+        <span class="orig-price-label">정상가</span>
+        <span class="orig-price-val">23,900원</span>
+      </div>
+      <div class="price-box-final-line">
+        <span class="final-price-label">쿠폰 실구매가</span>
+        <div class="final-price-wrap">
+          <strong class="final-price-val">11,900원</strong>
+          <span class="final-price-unit">부터</span>
+        </div>
       </div>
       <div class="price-notice">
         🚚 전 옵션 <strong>무료배송</strong> (산지 롯데택배 직송)
@@ -879,9 +954,15 @@
     </div>
 
     <div class="order-item-summary">
-      <div style="font-size: 14px; color: #a0aec0; margin-bottom: 2px;">선택 상품:</div>
-      <div id="modal-opt-name" style="font-size: 19px; color: var(--primary);">01번 2kg 소과 (14-16과)</div>
-      <div style="margin-top: 6px; font-size: 16px;">결제 금액: <strong id="modal-opt-price" style="color: var(--primary); font-size: 24px;">11,900원</strong> (무료배송)</div>
+      <div class="modal-summary-row">
+        <span class="modal-summary-label">선택 상품</span>
+        <span class="modal-summary-val" id="modal-opt-name">01번 2kg 소과 (14-16과)</span>
+      </div>
+      <div class="modal-summary-divider"></div>
+      <div class="modal-summary-row">
+        <span class="modal-summary-label">결제 금액 (무료배송)</span>
+        <strong class="modal-summary-price" id="modal-opt-price">11,900원</strong>
+      </div>
     </div>
 
     <div class="form-group">
