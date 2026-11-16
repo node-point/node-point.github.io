@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>노드포인트 통영 자연산 활 돌문어 (명품관)</title>
+  <meta name="description" content="노드포인트 산지직송 당일조업 통영 자연산 활 돌문어. 1kg·1.5kg·2kg, 제수용 1미 옵션. 전 옵션 무료배송.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    
+    :root {
+      --bg: #131720;
+      --card-bg: #1e2533;
+      --primary: #f6ad55;
+      --primary-soft: #2c221b;
+      --accent: #ecc94b;
+      --text: #f7fafc;
+      --text-muted: #cbd5e0;
+      --border: #3c475d;
+      --badge-bg: #3182ce;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+      line-height: 1.75;
+      padding-bottom: 120px;
+      word-break: keep-all;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 17px;
+    }
+
+    .top-brand-bar {
+      background: #0d1117;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .brand-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 36px;
+    }
+    .brand-title {
+      font-size: 24px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+    }
+    .brand-title span { color: var(--primary); }
+    .brand-tag {
+      font-size: 14px;
+      font-weight: 800;
+      background: var(--badge-bg);
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .hero { margin-bottom: 48px; }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+      background: var(--primary-soft);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .hero-headline {
+      font-size: 34px;
+      font-weight: 900;
+      line-height: 1.35;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .hero-headline em { font-style: normal; color: var(--primary); }
+    .hero-sub {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .img-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 48px;
+    }
+    .img-card img { width: 100%; height: auto; display: block; }
+
+        /* Price Section - Mobile-Perfect Layout */
+    .price-box {
+      background: var(--card-bg);
+      border: 1.5px solid var(--primary);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(246,173,85,0.12);
+      box-sizing: border-box;
+    }
+    .coupon-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+      color: #1a202c;
+      font-size: 13px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      letter-spacing: -0.2px;
+    }
+    .price-box-orig-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .orig-price-label {
+      font-size: 13px;
+      color: #8b949e;
+      font-weight: 600;
+    }
+    .orig-price-val {
+      font-size: 15px;
+      color: #8b949e;
+      text-decoration: line-through;
+      font-weight: 600;
+    }
+    .price-box-final-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .final-price-label {
+      font-size: 15px;
+      font-weight: 800;
+      color: #cbd5e0;
+      letter-spacing: -0.3px;
+    }
+    .final-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      white-space: nowrap;
+    }
+    .final-price-val {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+    .final-price-unit {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .price-notice {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #8b949e;
+      margin-top: 2px;
+    }
+    .price-notice strong {
+      color: #38a169;
+    }
+
+    .sec-title {
+      font-size: 26px;
+      font-weight: 900;
+      margin: 28px 0 16px 0;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sec-title::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+
+    .reason-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 24px 20px;
+      margin-bottom: 14px;
+    }
+    .reason-h3 {
+      font-size: 21px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .reason-p { font-size: 17px; color: var(--text-muted); line-height: 1.55; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 18px 0 24px 0;
+    }
+    .photo-item {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .photo-item img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .photo-label { padding: 10px 8px; font-size: 15px; font-weight: 800; text-align: center; color: var(--text); }
+
+    /* Option Cards - 2-Row Safe Layout */
+    .opt-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .opt-card.active {
+      border-color: var(--primary);
+      background: #252e3f;
+      box-shadow: 0 4px 16px rgba(246,173,85,0.2);
+    }
+    .opt-card-row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .opt-title-text {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      word-break: keep-all;
+      letter-spacing: -0.3px;
+      line-height: 1.35;
+    }
+    .opt-card-row-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+      padding-top: 8px;
+    }
+    .opt-desc-text {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      letter-spacing: -0.2px;
+      word-break: keep-all;
+      padding-right: 10px;
+    }
+    .opt-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .opt-orig-price-text {
+      font-size: 13px;
+      color: #a0aec0;
+      text-decoration: line-through;
+    }
+    .opt-final-price-text {
+      font-size: 21px;
+      font-weight: 900;
+      color: var(--primary);
+      white-space: nowrap;
+      letter-spacing: -0.5px;
+    }
+    .modal-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-summary-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #8b949e;
+      white-space: nowrap;
+    }
+    .modal-summary-val {
+      font-size: 15px;
+      font-weight: 800;
+      color: #f0f6fc;
+      text-align: right;
+      word-break: keep-all;
+    }
+    .modal-summary-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 8px 0;
+    }
+    .modal-summary-price {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .order-item-summary {
+      background: #252e3f;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+
+    /* Breadcrumb Bar */
+    .breadcrumb-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      color: #8b949e;
+      margin: 10px 0 16px 0;
+      padding: 0 4px;
+    }
+    .breadcrumb-bar a {
+      color: #a0aec0;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .breadcrumb-bar a:hover {
+      color: var(--primary);
+    }
+    .breadcrumb-sep {
+      color: #4b5563;
+      font-size: 12px;
+    }
+    .breadcrumb-item.active {
+      color: #e2e8f0;
+      font-weight: 700;
+    }
+
+
+    .safe-box {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 24px 20px;
+      margin: 28px 0 16px 0;
+    }
+    .safe-box h4 { font-size: 21px; font-weight: 900; color: #ffffff; margin-bottom: 8px; }
+    .safe-box p { font-size: 16px; color: var(--text-muted); line-height: 1.55; }
+
+    .site-footer {
+      margin-top: 36px;
+      padding: 22px 12px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: #a0aec0;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    /* Fixed Bottom Action Dock (2-Tier Vertical Mobile Layout) */
+    #bottom-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-width: 580px;
+      margin: 0 auto;
+      width: 100%;
+      background: rgba(13, 17, 23, 0.98);
+      border-top: 1.5px solid var(--border);
+      backdrop-filter: blur(16px);
+      padding: 10px 14px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 1500;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.6);
+      box-sizing: border-box;
+    }
+    .dock-top-status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0 4px;
+      box-sizing: border-box;
+    }
+    .dock-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 60%;
+    }
+    .dock-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .dock-price-val {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--primary);
+      letter-spacing: -0.3px;
+    }
+    .dock-ship-free {
+      font-size: 12px;
+      font-weight: 700;
+      color: #8b949e;
+    }
+    .dock-btn-row {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .btn-direct-order {
+      flex: 1.35;
+      background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+      color: #1a202c;
+      border: none;
+      height: 48px;
+      padding: 0 10px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      word-break: keep-all;
+      box-shadow: 0 4px 12px rgba(246,173,85,0.3);
+      transition: transform 0.1s ease;
+    }
+    .btn-direct-order:active {
+      transform: scale(0.98);
+      opacity: 0.9;
+    }
+    .btn-coupang-order, .btn-coupang {
+      flex: 1;
+      background: #2b6cb0;
+      color: #ffffff;
+      text-decoration: none;
+      border: none;
+      height: 48px;
+      padding: 0 10px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      word-break: keep-all;
+      box-shadow: 0 4px 12px rgba(43,108,176,0.3);
+      transition: transform 0.1s ease;
+    }
+    .btn-coupang-order:active, .btn-coupang:active {
+      transform: scale(0.98);
+      opacity: 0.9;
+    }
+
+    #order-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); z-index: 2000; }
+    #order-sheet {
+      display: none; position: fixed; bottom: 0; left: 0; width: 100%; max-height: 90%;
+      background: #1e2533; border-top: 2px solid var(--primary); border-radius: 20px 20px 0 0;
+      padding: 24px 18px; z-index: 2100; overflow-y: auto; color: #f7fafc;
+    }
+    .sheet-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .sheet-top h3 { font-size: 22px; font-weight: 900; color: var(--primary); }
+    .sheet-close-btn { background: none; border: none; font-size: 28px; cursor: pointer; color: #a0aec0; }
+    
+        .modal-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-summary-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #8b949e;
+      white-space: nowrap;
+    }
+    .modal-summary-val {
+      font-size: 15px;
+      font-weight: 800;
+      color: #f0f6fc;
+      text-align: right;
+      word-break: keep-all;
+    }
+    .modal-summary-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 8px 0;
+    }
+    .modal-summary-price {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .order-item-summary { background: #252e3f; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 16px; margin-bottom: 18px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 16px; font-weight: 800; color: #e2e8f0; margin-bottom: 6px; }
+    .form-input { width: 100%; padding: 14px 16px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 17px; background: #131720; color: #ffffff; }
+    
+    .bank-box { background: #2c221b; border: 2px solid var(--primary); border-radius: 14px; padding: 24px 20px; margin: 18px 0; color: #fff; }
+    .bank-acc-num { font-size: 21px; font-weight: 900; color: #ffffff; margin-bottom: 4px; }
+    .btn-copy-acc { background: var(--primary); color: #1a202c; border: none; padding: 10px 14px; border-radius: 8px; font-size: 19px; font-weight: 900; padding: 12px 18px; cursor: pointer; }
+    .btn-submit-order { width: 100%; background: var(--primary); color: #1a202c; border: none; padding: 18px; border-radius: 14px; font-size: 23px; font-weight: 900; padding: 20px; border-radius: 14px; cursor: pointer; }
+
+    #copy-toast { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.85); color: #fff; padding: 14px 22px; border-radius: 10px; font-size: 16px; font-weight: 800; z-index: 3000; border: 1px solid var(--primary); }
+  
+    /* Top & Floating Navigation */
+    .nav-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(246,173,85,0.14);
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 900;
+      padding: 12px 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      transition: all 0.2s ease;
+    }
+    .nav-back-btn:active {
+      background: var(--primary);
+      color: #1a202c;
+    }
+
+    .btn-return-main-bottom {
+      display: block;
+      width: 100%;
+      background: #1e2533;
+      border: 1.5px solid var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 16px;
+      border-radius: 14px;
+      margin: 36px 0 20px 0;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .btn-return-main-bottom:active {
+      background: var(--primary);
+      color: #1a202c;
+    }
+
+    #floating-quick-nav {
+      position: fixed;
+      bottom: 114px;
+      right: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 1800;
+    }
+    .quick-pill {
+      background: rgba(19, 23, 32, 0.94);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      border: 1.5px solid var(--primary);
+      padding: 9px 13px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 900;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+      transition: all 0.15s ease;
+    }
+    .quick-pill:active {
+      transform: scale(0.95);
+      background: var(--primary);
+      color: #1a202c;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="top-brand-bar">
+    🐙 노드포인트 통영 돌문어 직거래몰
+  </div>
+
+  <div class="container">
+    <a href="https://node-point.github.io/" class="nav-back-btn">‹ 🏠 노드포인트 공식 메인몰로 가기</a>
+
+    <div class="breadcrumb-bar">
+      <a href="https://node-point.github.io/">메인몰</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="https://node-point.github.io/#fish">🐟 산지수산</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-item active">통영 돌문어</span>
+    </div>
+
+    <header class="brand-header">
+      <div class="brand-title">🐙 <span>노드포인트</span></div>
+      <div class="brand-tag">통영 산지직송</div>
+    </header>
+
+    <section class="hero">
+      <span class="hero-eyebrow">🐙 당일조업 활 돌문어 · 전 옵션 무료배송</span>
+      <h1 class="hero-headline">
+        노드포인트 산지직송<br><em>당일조업 통영 자연산 돌문어</em>
+      </h1>
+      <p class="hero-sub">
+        일반용 1-6미부터 제수용 1미까지 5가지 옵션
+      </p>
+    </section>
+
+    <div class="img-card">
+      <img src="img/1.jpg" alt="통영 자연산 활 돌문어 실물">
+    </div>
+
+    <!-- Price Section -->
+    <section class="price-box">
+      <div class="coupon-badge">🚚 전 옵션 무료배송</div>
+      <div class="price-box-orig-line">
+        <span class="orig-price-label">정상가</span>
+        <span class="orig-price-val">53,780원</span>
+      </div>
+      <div class="price-box-final-line">
+        <span class="final-price-label">판매가</span>
+        <div class="final-price-wrap">
+          <strong class="final-price-val">32,900원</strong>
+          <span class="final-price-unit">부터</span>
+        </div>
+      </div>
+      <div class="price-notice" style="display:block;">🚚 전 옵션 <strong>무료배송</strong> (CJ대한통운) · 제주/도서산간 배송 불가</div>
+    </section>
+
+    <section>
+      <h2 class="sec-title">통영 돌문어가 특별한 이유</h2>
+      <div class="reason-card">
+        <h3 class="reason-h3">🐙 활(생물) 돌문어</h3>
+        <p class="reason-p">쿠팡 등록 상품정보 기준 수산물 건조상태 <strong>생물</strong>로 등록된 활 돌문어입니다.</p>
+      </div>
+      <div class="reason-card">
+        <h3 class="reason-h3">🌊 당일조업 산지직송</h3>
+        <p class="reason-p">통영에서 당일 조업한 돌문어를 손질 없이 활 상태로 선별해 보냅니다.</p>
+      </div>
+      <div class="reason-card">
+        <h3 class="reason-h3">🎁 제수용 1미 옵션</h3>
+        <p class="reason-p">일반 1-6미·1-12미 구성과 함께, 1kg·1.5kg·2kg <strong>제수용 1미</strong> 단품도 고르실 수 있습니다.</p>
+      </div>
+    </section>
+
+    <section class="photo-grid">
+      <div class="photo-item">
+        <img src="img/2.jpg" alt="손바닥 위에 올린 활 돌문어 실물">
+        <div class="photo-label">✋ 손 크기 비교 실물</div>
+      </div>
+      <div class="photo-item">
+        <img src="img/3.jpg" alt="그물망에 담긴 활 돌문어 실물">
+        <div class="photo-label">🥅 그물망 포장 실물</div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="sec-title">옵션을 선택해 주세요</h2>
+      <div class="opt-card active" onclick="pickOption(this, '활 돌문어 1kg (일반 1-6미)', '32,900원', '95152576765', '1kg (일반 1-6미)')">
+        <div class="opt-card-row-top">
+          <div class="opt-title-text">활 돌문어 1kg (일반 1-6미)</div>
+        </div>
+        <div class="opt-card-row-bottom">
+          <div class="opt-desc-text">1박스 · 무료배송</div>
+          <div class="opt-price-wrap">
+            <span class="opt-orig-price-text">53,780원</span>
+            <span class="opt-final-price-text">32,900원</span>
+          </div>
+        </div>
+      </div>
+      <div class="opt-card" onclick="pickOption(this, '활 돌문어 1kg (제수용 1미)', '43,900원', '95152576766', '1kg (제수용 1미)')">
+        <div class="opt-card-row-top">
+          <div class="opt-title-text">활 돌문어 1kg (제수용 1미)</div>
+        </div>
+        <div class="opt-card-row-bottom">
+          <div class="opt-desc-text">1박스 · 무료배송</div>
+          <div class="opt-price-wrap">
+            <span class="opt-orig-price-text">73,340원</span>
+            <span class="opt-final-price-text">43,900원</span>
+          </div>
+        </div>
+      </div>
+      <div class="opt-card" onclick="pickOption(this, '활 돌문어 1.5kg (제수용 1미)', '63,900원', '95152576762', '1.5kg (제수용 1미)')">
+        <div class="opt-card-row-top">
+          <div class="opt-title-text">활 돌문어 1.5kg (제수용 1미)</div>
+        </div>
+        <div class="opt-card-row-bottom">
+          <div class="opt-desc-text">1박스 · 무료배송</div>
+          <div class="opt-price-wrap">
+            <span class="opt-orig-price-text">98,230원</span>
+            <span class="opt-final-price-text">63,900원</span>
+          </div>
+        </div>
+      </div>
+      <div class="opt-card" onclick="pickOption(this, '활 돌문어 2kg (일반 1-12미)', '56,900원', '95152576764', '2kg (일반 1-12미)')">
+        <div class="opt-card-row-top">
+          <div class="opt-title-text">활 돌문어 2kg (일반 1-12미)</div>
+        </div>
+        <div class="opt-card-row-bottom">
+          <div class="opt-desc-text">1박스 · 무료배송</div>
+          <div class="opt-price-wrap">
+            <span class="opt-orig-price-text">89,340원</span>
+            <span class="opt-final-price-text">56,900원</span>
+          </div>
+        </div>
+      </div>
+      <div class="opt-card" onclick="pickOption(this, '활 돌문어 2kg (제수용 1미)', '91,900원', '95152576763', '2kg (제수용 1미)')">
+        <div class="opt-card-row-top">
+          <div class="opt-title-text">활 돌문어 2kg (제수용 1미)</div>
+        </div>
+        <div class="opt-card-row-bottom">
+          <div class="opt-desc-text">1박스 · 무료배송</div>
+          <div class="opt-price-wrap">
+            <span class="opt-orig-price-text">124,890원</span>
+            <span class="opt-final-price-text">91,900원</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 14px; color: #8b949e; line-height: 1.6; margin-top: 10px;">
+        ※ 모든 옵션 <strong style="color:#38a169;">무료배송</strong> · 제주/도서산간 배송 불가 · 부가세 면세 품목
+      </p>
+    </section>
+
+    <section class="safe-box">
+      <h4>🛡️ 노드포인트 신선 안심 보상제</h4>
+      <p>배송 중 변질이나 파손 시 100% 신속 보상해 드립니다. 사진 1~2장을 문자로 남겨주시면 즉시 조치됩니다.</p>
+      <div style="margin-top: 10px; font-weight: 800; color: var(--primary);">
+        📞 안심 CS 접수: 010-3448-9256 (문자 전용)
+      </div>
+    </section>
+
+
+    <!-- Bottom Wide Return Button -->
+    <a href="https://node-point.github.io/" class="btn-return-main-bottom">
+      🏠 노드포인트 메인몰 전체보기 ➔
+    </a>
+
+    <footer class="site-footer">
+      <p><strong>상호:</strong> 노드포인트 | <strong>대표자:</strong> 이병갑</p>
+      <p><strong>사업장:</strong> 경기도 남양주시 | <strong>출고·반품:</strong> 전북 군산시 경포천로</p>
+      <p><strong>품목·원산지:</strong> 활 돌문어 / 통영 자연산 (쿠팡 등록 상품명 기준)</p>
+      <p><strong>고객센터:</strong> 010-3448-9256 (문자 전용)</p>
+      <p><strong>입금계좌:</strong> IBK기업은행 584-011519-01-014 (예금주: 이병갑)</p>
+      <p style="margin-top: 8px; font-size: 12px; color: #718096;">© 2026 노드포인트. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <div id="order-overlay" onclick="closeOrderSheet()"></div>
+  <div id="order-sheet">
+    <div class="sheet-top">
+      <h3>📝 돌문어 직거래 주문</h3>
+      <button class="sheet-close-btn" onclick="closeOrderSheet()">×</button>
+    </div>
+
+    <div class="order-item-summary">
+      <div class="modal-summary-row">
+        <span class="modal-summary-label">선택 옵션</span>
+        <span class="modal-summary-val" id="modal-opt-name">활 돌문어 1kg (일반 1-6미)</span>
+      </div>
+      <div class="modal-summary-divider"></div>
+      <div class="modal-summary-row">
+        <span class="modal-summary-label">결제 금액</span>
+        <span class="modal-summary-price" id="modal-opt-price">32,900원</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>받는 분 성함</label>
+      <input type="text" id="cust-name" class="form-input" placeholder="성함을 입력하세요">
+    </div>
+
+    <div class="form-group">
+      <label>연락처 (휴대폰 번호)</label>
+      <input type="tel" id="cust-phone" class="form-input" placeholder="010-0000-0000">
+    </div>
+
+    <div class="form-group">
+      <label>받으실 배송지 주소</label>
+      <input type="text" id="cust-addr" class="form-input" placeholder="상세주소(동·호수)까지 정확히 입력">
+    </div>
+
+    <div class="bank-box">
+      <div style="font-size: 16px; font-weight: 800; color: var(--primary); margin-bottom: 4px;">🏦 입금 계좌 안내</div>
+      <div class="bank-acc-num">IBK기업은행 584-011519-01-014</div>
+      <div style="font-size: 17px; font-weight: 800; margin-bottom: 12px;">예금주: 이병갑 (노드포인트)</div>
+      <button class="btn-copy-acc" onclick="copyAccount()">📋 계좌번호 복사하기</button>
+    </div>
+
+    <button class="btn-submit-order" onclick="submitDirectOrder()">
+      주문서 접수 및 문자 전송 ➔
+    </button>
+  </div>
+
+  <aside id="bottom-dock">
+    <div class="dock-top-status">
+      <span class="dock-label" id="dock-label-text">선택: 1kg (일반 1-6미)</span>
+      <div class="dock-price-wrap">
+        <span class="dock-price-val" id="dock-price-text">32,900원</span>
+        <span class="dock-ship-free">(무료배송)</span>
+      </div>
+    </div>
+    <div class="dock-btn-row">
+      <button class="btn-direct-order" onclick="openOrderSheet()">
+        ⚡ 바로구매 (계좌직거래)
+      </button>
+      <a href="https://www.coupang.com/vp/products/9473224901?vendorItemId=95152576765" id="coupang-link" target="_blank" rel="noopener" class="btn-coupang-order">
+        쿠팡으로 결제 ➔
+      </a>
+    </div>
+  </aside>
+
+  <div id="copy-toast">계좌번호가 복사되었습니다!</div>
+
+  <script>
+    let currentSelectedOpt = "활 돌문어 1kg (일반 1-6미)";
+    let currentSelectedPrice = "32,900원";
+
+    function pickOption(card, name, price, vendorItemId, short) {
+      document.querySelectorAll('.opt-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+
+      currentSelectedOpt = name;
+      currentSelectedPrice = price;
+
+      document.getElementById('dock-label-text').innerText = '선택: ' + (short || name);
+      document.getElementById('dock-price-text').innerText = price;
+
+      document.getElementById('modal-opt-name').innerText = name;
+      document.getElementById('modal-opt-price').innerText = price;
+
+      document.getElementById('coupang-link').href = 'https://www.coupang.com/vp/products/9473224901?vendorItemId=' + vendorItemId;
+    }
+
+    function openOrderSheet() {
+      document.getElementById('order-overlay').style.display = 'block';
+      document.getElementById('order-sheet').style.display = 'block';
+    }
+
+    function closeOrderSheet() {
+      document.getElementById('order-overlay').style.display = 'none';
+      document.getElementById('order-sheet').style.display = 'none';
+    }
+
+    function copyAccount() {
+      const acc = '58401151901014';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(acc).then(() => showToast());
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = acc;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast();
+      }
+    }
+
+    function showToast() {
+      const t = document.getElementById('copy-toast');
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 2000);
+    }
+
+    function submitDirectOrder() {
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const addr = document.getElementById('cust-addr').value.trim();
+
+      if (!name || !phone || !addr) {
+        alert('성함, 연락처, 주소를 모두 입력해 주세요!');
+        return;
+      }
+
+      const smsText = '[노드포인트 직거래 주문]\n' +
+                      '• 상품: ' + currentSelectedOpt + '\n' +
+                      '• 금액: ' + currentSelectedPrice + '\n' +
+                      '• 주문자: ' + name + ' (' + phone + ')\n' +
+                      '• 배송지: ' + addr + '\n' +
+                      '• 입금계좌: 기업은행 584-011519-01-014 이병갑';
+
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      const delim = isIOS ? '&' : '?';
+      window.location.href = 'sms:01034489256' + delim + 'body=' + encodeURIComponent(smsText);
+
+      alert('🎉 주문서가 정상 접수되었습니다!\n\n문자 앱이 자동으로 열리면 [전송]을 눌러주세요.\n기업은행 584-011519-01-014 (예금주: 이병갑)으로 입금해 주시면 확인 즉시 신선 발송됩니다.');
+      closeOrderSheet();
+    }
+  </script>
+
+  <!-- Floating Quick Nav (메인으로 & 위로) -->
+  <div id="floating-quick-nav">
+    <a href="https://node-point.github.io/" class="quick-pill" title="메인몰 홈으로 가기">
+      🏠 메인
+    </a>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="quick-pill" title="맨 위로 가기">
+      ⬆ 위로
+    </button>
+  </div>
+
+</body>
+</html>
