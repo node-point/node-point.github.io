@@ -257,16 +257,9 @@
       border-radius: 14px;
       padding: 14px 16px;
       margin-bottom: 12px;
-      cursor: pointer;
-      transition: all 0.2s ease;
       display: flex;
       flex-direction: column;
       gap: 8px;
-    }
-    .opt-card.active {
-      border-color: var(--primary);
-      background: #252e3f;
-      box-shadow: 0 4px 16px rgba(246,173,85,0.2);
     }
     .opt-card-row-top {
       display: flex;
@@ -637,6 +630,31 @@
       color: #1a202c;
     }
 
+    /* 옵션 안내형(비선택) 카드 + 주문창 옵션 선택 */
+    .opt-note {
+      font-size: 14px;
+      font-weight: 700;
+      color: #8b949e;
+      margin: -4px 0 14px 0;
+      line-height: 1.5;
+      letter-spacing: -0.2px;
+      word-break: keep-all;
+    }
+    select.form-input {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: linear-gradient(45deg, transparent 50%, #f6ad55 50%), linear-gradient(135deg, #f6ad55 50%, transparent 50%);
+      background-position: calc(100% - 22px) calc(50% + 1px), calc(100% - 16px) calc(50% + 1px);
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      padding-right: 44px;
+      cursor: pointer;
+    }
+    select.form-input option {
+      background: #131720;
+      color: #ffffff;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
@@ -721,8 +739,9 @@
     </section>
 
     <section>
-      <h2 class="sec-title">옵션을 선택해 주세요</h2>
-      <div class="opt-card active" onclick="pickOption(this, '국내산 싱싱 백오이 1kg', '14,900원', '95450018648', '1kg')">
+      <h2 class="sec-title">옵션 및 가격 안내</h2>
+      <p class="opt-note">※ 원하시는 옵션은 ⚡ 바로구매 주문창 또는 쿠팡 결제 화면에서 선택해 주세요.</p>
+      <div class="opt-card">
         <div class="opt-card-row-top">
           <div class="opt-title-text">국내산 싱싱 백오이 1kg</div>
         </div>
@@ -734,7 +753,7 @@
           </div>
         </div>
       </div>
-      <div class="opt-card" onclick="pickOption(this, '국내산 싱싱 백오이 3kg', '25,900원', '95450018647', '3kg')">
+      <div class="opt-card">
         <div class="opt-card-row-top">
           <div class="opt-title-text">국내산 싱싱 백오이 3kg</div>
         </div>
@@ -746,7 +765,7 @@
           </div>
         </div>
       </div>
-      <div class="opt-card" onclick="pickOption(this, '국내산 싱싱 백오이 5kg', '37,900원', '95450018646', '5kg')">
+      <div class="opt-card">
         <div class="opt-card-row-top">
           <div class="opt-title-text">국내산 싱싱 백오이 5kg</div>
         </div>
@@ -795,6 +814,15 @@
       <button class="sheet-close-btn" onclick="closeOrderSheet()">×</button>
     </div>
 
+    <div class="form-group">
+      <label for="order-opt-select">주문 옵션 선택</label>
+      <select id="order-opt-select" class="form-input" onchange="applyOrderOption()">
+        <option value="14,900원" data-name="국내산 싱싱 백오이 1kg" selected>국내산 싱싱 백오이 1kg · 14,900원</option>
+        <option value="25,900원" data-name="국내산 싱싱 백오이 3kg">국내산 싱싱 백오이 3kg · 25,900원</option>
+        <option value="37,900원" data-name="국내산 싱싱 백오이 5kg">국내산 싱싱 백오이 5kg · 37,900원</option>
+      </select>
+    </div>
+
     <div class="order-item-summary">
       <div class="modal-summary-row">
         <span class="modal-summary-label">선택 옵션</span>
@@ -836,9 +864,9 @@
 
   <aside id="bottom-dock">
     <div class="dock-top-status">
-      <span class="dock-label" id="dock-label-text">선택: 1kg</span>
+      <span class="dock-label" id="dock-label-text">옵션 3종 · 결제 시 선택</span>
       <div class="dock-price-wrap">
-        <span class="dock-price-val" id="dock-price-text">14,900원</span>
+        <span class="dock-price-val" id="dock-price-text">14,900원부터</span>
         <span class="dock-ship-free">(무료배송)</span>
       </div>
     </div>
@@ -846,7 +874,7 @@
       <button class="btn-direct-order" onclick="openOrderSheet()">
         ⚡ 바로구매 (계좌직거래)
       </button>
-      <a href="https://www.coupang.com/vp/products/9551879826?vendorItemId=95450018648" id="coupang-link" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn-coupang-order">
+      <a href="https://www.coupang.com/vp/products/9551879826" id="coupang-link" rel="noopener noreferrer" referrerpolicy="no-referrer" class="btn-coupang-order">
         쿠팡으로 결제 ➔
       </a>
     </div>
@@ -855,27 +883,25 @@
   <div id="copy-toast">계좌번호가 복사되었습니다!</div>
 
   <script>
-    let currentSelectedOpt = "국내산 싱싱 백오이 1kg";
-    let currentSelectedPrice = "14,900원";
+    function getSelectedOption() {
+      const sel = document.getElementById('order-opt-select');
+      if (sel && sel.options.length > 0) {
+        const opt = sel.options[sel.selectedIndex];
+        return { name: opt.getAttribute('data-name') || opt.text, price: opt.value };
+      }
+      return { name: '', price: '' };
+    }
 
-    function pickOption(card, name, price, vendorItemId, short) {
-      document.querySelectorAll('.opt-card').forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-
-      currentSelectedOpt = name;
-      currentSelectedPrice = price;
-
-      document.getElementById('dock-label-text').innerText = '선택: ' + (short || name);
-      document.getElementById('dock-price-text').innerText = price;
-
-      document.getElementById('modal-opt-name').innerText = name;
-      document.getElementById('modal-opt-price').innerText = price;
-
-      document.getElementById('coupang-link').href = 'https://www.coupang.com/vp/products/9551879826?vendorItemId=' + vendorItemId;
+    function applyOrderOption() {
+      const selected = getSelectedOption();
+      if (!selected.name) return;
+      document.getElementById('modal-opt-name').innerText = selected.name;
+      document.getElementById('modal-opt-price').innerText = selected.price;
     }
 
     function openOrderSheet() {
       document.getElementById('order-overlay').style.display = 'block';
+      applyOrderOption();
       document.getElementById('order-sheet').style.display = 'block';
     }
 
@@ -910,14 +936,16 @@
       const phone = document.getElementById('cust-phone').value.trim();
       const addr = document.getElementById('cust-addr').value.trim();
 
+      const selected = getSelectedOption();
+
       if (!name || !phone || !addr) {
         alert('성함, 연락처, 주소를 모두 입력해 주세요!');
         return;
       }
 
       const smsText = '[노드포인트 직거래 주문]\n' +
-                      '• 상품: ' + currentSelectedOpt + '\n' +
-                      '• 금액: ' + currentSelectedPrice + '\n' +
+                      '• 상품: ' + selected.name + '\n' +
+                      '• 금액: ' + selected.price + '\n' +
                       '• 주문자: ' + name + ' (' + phone + ')\n' +
                       '• 배송지: ' + addr + '\n' +
                       '• 입금계좌: 기업은행 584-011519-01-014 이병갑';
