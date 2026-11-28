@@ -1119,6 +1119,12 @@
         return;
       }
 
+      const optSel = document.getElementById('order-opt-select');
+      if (optSel && optSel.options[optSel.selectedIndex] && optSel.options[optSel.selectedIndex].disabled) {
+        alert('선택하신 옵션은 현재 품절입니다. 다른 옵션을 선택해 주세요.');
+        return;
+      }
+
       const consent = document.getElementById('privacy-consent');
       if (!consent || !consent.checked) {
         alert('[필수] 개인정보 수집·이용에 동의해 주셔야 주문이 접수됩니다.');
